@@ -17,7 +17,7 @@ export function SidebarMenu({ sidebarOpen, setSidebarOpen }) {
   }
 
   return (
-    <Container isOpen={sidebarOpen}>
+    <Container isOpen={sidebarOpen} themeUse={theme}>
       <button className="sidebarbutton" onClick={ModSidebaropen}>
 
         <AiOutlineLeft />
@@ -202,6 +202,65 @@ const Container = styled.div`
           border-radius: 10px;
           transition: all 0.3s
           position: relative;
+        .theme-container {
+          background-blend-mode: multiply, multiply;
+          transition: 0.4s;
+         .grid {
+           display: grid;
+           justify-items: center;
+           align-content: center;
+           height: 100vh;
+           width: 100vw;
+           font-family: "Lato", sans-serif;
+        }
+           .demo {
+          font-size: 32px;
+          .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            .theme-swither {
+              opacity: 0;
+              width: 0;
+              height: 0;
+              &:checked + .slider:before {
+                left: 4px;
+                content: "🌑";
+                transform: translateX(26px);
+              }
+            }
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: ${({ themeUse }) =>
+                themeUse === "light" ? v.lightcheckbox : v.checkbox};
+
+              transition: 0.4s;
+              &::before {
+                position: absolute;
+                content: "☀️";
+                height: 0px;
+                width: 0px;
+                left: -10px;
+                top: 16px;
+                line-height: 0px;
+                transition: 0.4s;
+              }
+              &.round {
+                border-radius: 34px;
+
+                &::before {
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
           }
  }
 `;
