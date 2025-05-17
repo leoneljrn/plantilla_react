@@ -93,12 +93,12 @@ const secondarylinksArray = [
   {
     label: "Configuración",
     icon: <AiOutlineSetting />,
-    to: "/",
+    to: "/null",
   },
   {
     label: "Salir",
     icon: <MdLogout />,
-    to: "/estadisticas",
+    to: "/null",
   },
 ];
 
@@ -190,6 +190,15 @@ const Container = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between; 
+    .titletheme{
+    display: block;
+    padding: 10px;
+    font-weight: 700;
+    opacity: ${({ isOpen }) => (isOpen ? `1` : `0`)};
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    }
     span{
     display: block;
     padding: 10px;

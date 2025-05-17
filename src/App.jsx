@@ -41,6 +41,7 @@ const Container = styled.div`
   &.active {
     grid-template-columns: 300px auto;
   }
+  color:${({theme})=>theme.text};
 
 `;
 export default App
