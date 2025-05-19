@@ -13,9 +13,8 @@ export function SidebarMenu({ sidebarOpen, setSidebarOpen }) {
   }
   const { setTheme, theme } = useContext(ThemeContext);
   const CambiarTheme = () => {
-    setTheme((theme) => (theme === "light" ? "dark" : "light"))
-  }
-
+    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+  };
   return (
     <Container isOpen={sidebarOpen} themeUse={theme}>
       <button className="sidebarbutton" onClick={ModSidebaropen}>
@@ -29,11 +28,11 @@ export function SidebarMenu({ sidebarOpen, setSidebarOpen }) {
         <h2>BCV2025</h2>
       </div>
 
-      {linksArray.map(({ label, icon, to }) => (
+      {linksArray.map(({ icon, label, to }) => (
         <div className="linkContainer" key={label}>
           <NavLink to={to} className={({ isActive }) => `links${isActive ? ` active` : ``}`}>
             <div className="linkicon">{icon}</div>
-            {sidebarOpen && (<span>{label}</span>)}
+            {sidebarOpen && <span>{label}</span>}
           </NavLink>
         </div>
       ))}
@@ -42,12 +41,12 @@ export function SidebarMenu({ sidebarOpen, setSidebarOpen }) {
         <div className="linkContainer" key={label}>
           <NavLink to={to} className={({ isActive }) => `links${isActive ? ` active` : ``}`}>
             <div className="linkicon">{icon}</div>
-            {sidebarOpen && (<span>{label}</span>)}
+            {sidebarOpen && <span>{label}</span>}
           </NavLink>
         </div>
       ))}
       <Divider />
-      <div className="Themecontent">
+      <div className="themecontent">
         {sidebarOpen && <span className="titletheme">Dark mode</span>}
         <div className="togglecontent">
           <div className="grid theme-container">
@@ -186,7 +185,7 @@ const Container = styled.div`
       }
     }
   }
-  .Themecontent{
+  .themecontent{
     display:flex;
     align-items:center;
     justify-content: space-between; 
@@ -247,7 +246,7 @@ const Container = styled.div`
               right: 0;
               bottom: 0;
               background: ${({ themeUse }) =>
-                themeUse === "light" ? v.lightcheckbox : v.checkbox};
+    themeUse === "light" ? v.lightcheckbox : v.checkbox};
 
               transition: 0.4s;
               &::before {

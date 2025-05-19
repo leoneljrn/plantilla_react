@@ -15,14 +15,12 @@ function App() {
   const themeStyle = theme === "light" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
- 
-
   return (
     <>
       <ThemeContext.Provider value={{ setTheme, theme }}>
         <ThemeProvider theme={themeStyle}>
           <BrowserRouter>
-            <Container className={sidebarOpen ? "sidebarState active" : "sidebarState"}>
+            <Container className={sidebarOpen ? "sidebarState active" : ""}>
               <SidebarMenu sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
               <MyRoutes />
             </Container>

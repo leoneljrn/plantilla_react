@@ -12,4 +12,4 @@ export function Productos() {
 }
 
 const Container = styled.div`
- heigth:100vh;`;
+ heigth:100vh;`
